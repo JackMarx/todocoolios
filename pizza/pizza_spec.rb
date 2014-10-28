@@ -12,7 +12,7 @@
       end
 
       it "creates a pizza with a bake time" do
-        expect(pizza.time)_baked.to eq(10)
+        expect(pizza.time_baked).to eq(10)
       end
     end
 
