@@ -15,6 +15,12 @@ require_relative 'pizza'
       it "creates a pizza with a bake time" do
         expect(pizza.time_baked).to eq(10)
       end
-    end
 
+    let (:pizza2) {Pizza.new("sausage", "delicious")}
+
+      it "expects bake time to equal 0" do
+        expect(pizza2.time_baked).to eq(0)
+    end
   end
+
+end
