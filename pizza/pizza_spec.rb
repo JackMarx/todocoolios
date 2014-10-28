@@ -1,7 +1,11 @@
 require_relative 'pizza'
 
   describe Pizza do
-    let (:pizza) {Pizza.new("sausage", "delicious", 10)}
+    let (:pizza) {Pizza.new(name: "sausage", description: "delicious", time_baked: 10)}
+    let (:pizza2) {Pizza.new(name: "sausage", description: "delicious")}
+    let (:pepper){Topping.new}
+    let (:onion){Topping.new}
+    let (:pizza3) {Pizza.new(name: "veggie-delight", description: "delicious", toppings: [pepper, onion])}
 
     context "#initialize" do
       it "creates a pizza with a name" do
@@ -16,11 +20,13 @@ require_relative 'pizza'
         expect(pizza.time_baked).to eq(10)
       end
 
-    let (:pizza2) {Pizza.new("sausage", "delicious")}
-
       it "expects bake time to equal 0" do
         expect(pizza2.time_baked).to eq(0)
-    end
-  end
+      end
 
-end
+      it "should have many toppings" do
+        expect(pizza3.toppings).to eq([pepper, onion])
+      end
+    end
+
+  end
