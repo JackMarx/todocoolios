@@ -1,3 +1,4 @@
+require_relative 'pizza'
 
   describe Pizza do
     let (:pizza) {Pizza.new("sausage", "delicious", 10)}
