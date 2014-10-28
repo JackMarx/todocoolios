@@ -36,9 +36,23 @@ describe 'todo' do
     end
 
     describe '#completed?' do
-      it 'should return a boolean' do
-        expect(task.completed?).to be_boolean
+      it 'should return true if the task is completed' do
+        task.mark_as_complete!
+        expect(task.completed?).to be true
       end
+
+      it 'should return false if the task is not completed' do
+        task.mark_as_incomplete!
+        expect(task.completed?).to be false
+      end
+    end
+  end
+
+  describe 'list' do
+    let(:list){ List.new(title: "Stuff to ignore today") }
+
+    it 'has a title' do
+      expect(list.title).to eq("Stuff to ignore today")
     end
   end
 end
